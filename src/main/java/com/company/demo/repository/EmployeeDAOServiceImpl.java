@@ -35,6 +35,7 @@ public class EmployeeDAOServiceImpl implements EmployeeDAOService {
         employee.setEmail(employeeDetails.getEmail());
         employee.setLastname(employeeDetails.getLastname());
         employee.setFirstname(employeeDetails.getFirstname());
+        employee.setDivision(employeeDetails.getDivision());
         return repository.save(employee);
     }
 

@@ -11,15 +11,17 @@ public class Employee {
     private String firstname;
     private String lastname;
     private String email;
+    private String division;
 
     public Employee() {
 
     }
 
-    public Employee(String firstName, String lastName, String emailId) {
+    public Employee(String firstName, String lastName, String emailId, String division) {
         this.firstname = firstName;
         this.lastname = lastName;
         this.email = emailId;
+        this.division = division;
     }
 
     @Id
@@ -55,5 +57,13 @@ public class Employee {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getDivision() {
+        return division;
+    }
+
+    public void setDivision(String division) {
+        this.division = division;
     }
 }
