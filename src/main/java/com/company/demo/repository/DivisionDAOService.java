@@ -7,4 +7,5 @@ import java.util.List;
 public interface DivisionDAOService {
     List<Division> findAll();
     Division findByDivisionName(String divisionName) throws Exception;
+    Division save(Division division);
 }

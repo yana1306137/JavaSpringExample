@@ -7,6 +7,7 @@ import org.springframework.data.repository.Repository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -25,5 +26,10 @@ public class DivisionController {
     public ResponseEntity<Division> getDivisionByDivisionName(@PathVariable(value = "divisionname") String divisionName) throws Exception {
         Division division = divisionDAOService.findByDivisionName(divisionName);
         return ResponseEntity.ok().body(division);
+    }
+
+    @PostMapping("/division")
+    public Division createDivision(@Valid @RequestBody Division division) {
+        return divisionDAOService.save(division);
     }
 }
